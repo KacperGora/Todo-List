@@ -1,14 +1,16 @@
-import { useState } from "react";
-
 const TaskItem = ({ task, taskList, setTaskList }) => {
-  const [isCompleted, setIsCompleted] = useState(false);
   const completeHandler = () => {
-    setIsCompleted(!isCompleted);
+    setTaskList(
+      taskList.map((el) => {
+        if (el.id === task.id) {
+          return { ...task, isCompleted: !el.isCompleted };
+        } else return el;
+      })
+    );
   };
   const deleteHandler = () => {
-      console.log(task.id);
-      setTaskList(taskList.filter(el => el.id !== task.id))
-  }
+    setTaskList(taskList.filter((el) => el.id !== task.id));
+  };
   return (
     <li>
       {task.taskName}
@@ -16,6 +18,6 @@ const TaskItem = ({ task, taskList, setTaskList }) => {
       <button onClick={completeHandler}>Completed</button>
       <button onClick={deleteHandler}>Delete</button>
     </li>
-  )
+  );
 };
 export default TaskItem;
