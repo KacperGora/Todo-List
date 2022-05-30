@@ -6,7 +6,7 @@ const InputForm = ({ setNewTask, newTask, taskList, setTaskList }) => {
       ...prevState,
       { taskName: newTask, id: Math.random(), isCompleted: false },
     ]);
-    setNewTask('')
+    setNewTask("");
   };
 
   const changeHandler = (e) => {
