@@ -1,3 +1,4 @@
-.done {
-    text-decoration: dotted;
+.complete {
+    text-decoration: line-through;
+    color: rgb(134, 134, 134)
 }

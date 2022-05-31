@@ -1,8 +1,9 @@
 import Header from "./components/Header";
-import "./App.css";
+import classes from './App.module.css'
 import InputForm from "./components/InputForm";
 import { useState } from "react";
 import TaskList from "./components/TaskList";
+import Filter from "./components/Filter";
 
 function App() {
   const [newTask, setNewTask] = useState("");
@@ -11,12 +12,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <InputForm
-        taskList={taskList}
-        setTaskList={setTaskList}
-        setNewTask={setNewTask}
-        newTask={newTask}
-      />
+      <div className={classes.taskBar}>
+      
+        <InputForm
+          taskList={taskList}
+          setTaskList={setTaskList}
+          setNewTask={setNewTask}
+          newTask={newTask}
+        />
+        <Filter />
+      </div>
       <TaskList setTaskList={setTaskList} taskList={taskList} />
     </div>
   );

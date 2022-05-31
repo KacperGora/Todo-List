@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import classes from "./TaskItem.module.css";
 const TaskItem = ({ task, taskList, setTaskList }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedTask, setUpdatedTask] = useState("");
@@ -35,7 +36,7 @@ const TaskItem = ({ task, taskList, setTaskList }) => {
   };
 
   return (
-    <li>
+    <li className={task.isCompleted ? classes.complete : ""}>
       {task.taskName}
 
       {isEditing && (

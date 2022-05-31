@@ -2,6 +2,9 @@ import React from "react";
 const InputForm = ({ setNewTask, newTask, taskList, setTaskList }) => {
   const submitHandler = (e) => {
     e.preventDefault();
+    if(newTask.trim()=== ''){
+      return
+    }
     setTaskList((prevState) => [
       ...prevState,
       { taskName: newTask, id: Math.random(), isCompleted: false },
