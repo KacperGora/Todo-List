@@ -1,9 +1,9 @@
 import React from "react";
-const InputForm = ({ setNewTask, newTask, taskList, setTaskList }) => {
+const InputForm = ({ setNewTask, newTask, setTaskList }) => {
   const submitHandler = (e) => {
     e.preventDefault();
-    if(newTask.trim()=== ''){
-      return
+    if (newTask.trim() === "") {
+      return;
     }
     setTaskList((prevState) => [
       ...prevState,

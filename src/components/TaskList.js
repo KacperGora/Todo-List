@@ -1,14 +1,14 @@
 import TaskItem from "./TaskItem";
 
-const TaskList = ({ taskList, setTaskList }) => {
+const TaskList = ({ filteredTasks, setTaskList }) => {
   return (
     <ul>
-      {taskList.map((task) => (
+      {filteredTasks.map((task) => (
         <TaskItem
           key={task.id}
           task={task}
           setTaskList={setTaskList}
-          taskList={taskList}
+          filteredTasks={filteredTasks}
         />
       ))}
     </ul>
